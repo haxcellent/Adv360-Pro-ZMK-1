@@ -12,8 +12,8 @@ clean:
 
 firmware/%-left.uf2 firmware/%-right.uf2: config/adv360.keymap
 	$(DOCKER) run --rm -it --name zmk \
-		-v $(PWD)/firmware:/app/firmware \
-		-v $(PWD)/config:/app/config:ro \
+		-v $(pwd)/firmware:/app/firmware \
+		-v $(pwd)/config:/app/config:ro \
 		-e TIMESTAMP=$(TIMESTAMP) \
 		zmk
 
